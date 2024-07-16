@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>My Team Compositions</h1>
+<div id="all-teams-container">
+    {% for team in teams %}
+    <div id="team-container">
+        <a href="">{{ team.team_name }}</a>
+        <div id="full-team-characters-container">
+            {% for character in team.characters %}
+            <div class="character-image-container">
+                <img src="{{ character.image }}" alt="{{ character.name }}" id="teams-character-image">
+                <p>{{ character.name }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
